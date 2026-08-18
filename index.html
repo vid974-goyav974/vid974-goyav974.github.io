@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pinball Univers — Catalogue, collection et carnet de bord pour passionnés de flippers</title>
-<meta name="description" content="Pinball Univers : plus de 2 300 flippers consultables par année et par fabricant, votre collection de monnaies souvenirs, vos photos, vos scores et une carte du monde de vos parties. Application Android gratuite, sans publicité.">
+<meta name="description" content="Pinball Univers : 2 379 flippers consultables par année et par fabricant, le palmarès des champions, votre collection de monnaies souvenirs, vos photos, vos notes et une carte du monde de vos parties. Application Android gratuite, sans publicité.">
 <meta property="og:title" content="Pinball Univers">
 <meta property="og:description" content="Catalogue, collection et carnet de bord pour passionnés de flippers.">
 <meta property="og:type" content="website">
@@ -213,6 +213,25 @@ section{padding:96px 0;position:relative}
   .shot{max-width:250px}
 }
 
+/* ---------- Palmarès (bloc sans capture) ---------- */
+.roll{
+  border:1px solid var(--line);border-radius:22px;padding:30px;
+  background:linear-gradient(160deg,rgba(255,232,26,.08),transparent 65%);
+}
+.roll table{width:100%;border-collapse:collapse;margin-top:20px;font-size:15px}
+.roll th{
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--dim);text-align:left;font-weight:400;padding-bottom:10px;
+}
+.roll td{padding:9px 0;border-top:1px solid var(--line)}
+.roll td:first-child{font-family:var(--mono);color:var(--amber);width:4.5em}
+.roll td:last-child{color:var(--dim);text-align:right;font-size:13.5px}
+.roll .more{margin-top:16px;font-size:14px;color:var(--dim)}
+@media(max-width:640px){
+  .roll{padding:20px}
+  .roll td:last-child,.roll th:last-child{display:none}
+}
+
 /* ---------- Galerie ---------- */
 .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:26px}
 .gcard{
@@ -308,6 +327,7 @@ footer{padding:60px 0 80px;border-top:1px solid var(--line)}
     <a class="brand" href="#top">PINBALL UNIVERS</a>
     <nav class="topnav">
       <a href="#catalogue">Le catalogue</a>
+      <a href="#champions">Les champions</a>
       <a href="#ecrans">Les écrans</a>
       <a href="#telecharger">Télécharger</a>
       <a href="#confidentialite">Confidentialité</a>
@@ -322,7 +342,7 @@ footer{padding:60px 0 80px;border-top:1px solid var(--line)}
       <p class="eyebrow">Application Android · Français &amp; English</p>
       <h1><span class="tube ignite">PINBALL</span><span class="line2">UNIVERS</span></h1>
       <p class="lede">Catalogue, collection et carnet de bord pour passionnés de flippers.</p>
-      <p class="sub">De l'âge d'or électromécanique aux machines les plus récentes : chaque flipper a sa fiche, chaque partie jouée a sa monnaie souvenir, et tout tient dans votre poche.</p>
+      <p class="sub">De l'âge d'or électromécanique aux machines les plus récentes : chaque flipper a sa fiche, chaque partie jouée a sa monnaie souvenir, le palmarès des champions est de la partie, et tout tient dans votre poche.</p>
       <div class="cta">
         <a class="btn btn-solid" href="https://play.google.com/store/apps/details?id=com.pinball.univers">Installer sur Google Play</a>
         <a class="btn btn-ghost" href="#ecrans">Voir les écrans</a>
@@ -339,10 +359,10 @@ footer{padding:60px 0 80px;border-top:1px solid var(--line)}
 <!-- ============ COMPTEURS ============ -->
 <div class="scoreband">
   <div class="shell reels">
-    <div class="reel"><div class="num" data-count="2300" data-suffix="+">2 300+</div><div class="cap">Flippers</div></div>
-    <div class="reel"><div class="num" data-count="150" data-suffix="+">150+</div><div class="cap">Fabricants</div></div>
+    <div class="reel"><div class="num" data-count="2379">2 379</div><div class="cap">Flippers</div></div>
+    <div class="reel"><div class="num" data-count="153">153</div><div class="cap">Fabricants</div></div>
     <div class="reel"><div class="num" data-count="80">80</div><div class="cap">Années couvertes</div></div>
-    <div class="reel"><div class="num" data-count="70" data-suffix="+">70+</div><div class="cap">Termes au glossaire</div></div>
+    <div class="reel"><div class="num" data-count="37">37</div><div class="cap">Champions</div></div>
   </div>
 </div>
 
@@ -386,6 +406,7 @@ footer{padding:60px 0 80px;border-top:1px solid var(--line)}
         <ul>
           <li>Designer, programmation, artwork, musique, voix, versions et éditions</li>
           <li>Système, type d'affichage, nombre de joueurs, dimensions et poids</li>
+          <li>Nombre d'exemplaires produits, avec la source du chiffre — renseigné pour plus de 1 200 machines</li>
           <li>Toys du plateau, particularités, astuces de jeu et easter eggs</li>
           <li>Thème, anecdotes et sources de recherche</li>
         </ul>
@@ -406,7 +427,9 @@ footer{padding:60px 0 80px;border-top:1px solid var(--line)}
           <li>Une monnaie personnalisée gagnée à chaque flipper joué</li>
           <li>Note, meilleur score, lieu et commentaires par machine</li>
           <li>Vos parties situées sur une carte du monde interactive</li>
-          <li>Export de la collection en PDF, version simple ou détaillée</li>
+          <li>Cinq notes en étoiles par machine : beauté, jouabilité, son, design, difficulté</li>
+          <li>Filtre « Préférés » : n'afficher que les flippers notés sur le critère de votre choix</li>
+          <li>Export de la collection en PDF, version simple ou détaillée, plus un tableau de vos notes par année</li>
           <li>Six emplacements photo par machine : fronton, plateau, flipper complet et trois détails</li>
         </ul>
       </div>
@@ -444,10 +467,37 @@ footer{padding:60px 0 80px;border-top:1px solid var(--line)}
           <li>Glossaire bilingue de plus de 70 termes, du bumper au tilt</li>
           <li>Annuaire mondial des boutiques de pièces détachées et de mods, classées par pays</li>
           <li>Musées et collections de flippers jouables à travers le monde</li>
-          <li>Import et export de vos données, sauvegarde et restauration complètes</li>
+          <li>Ma bibliothèque : vos notices et manuels en PDF, rangés par flipper</li>
+          <li>Sauvegarde et restauration de tout ce que vous avez saisi, plus l'export de chaque liste en fichier texte</li>
         </ul>
       </div>
     </article>
+  </div>
+</section>
+
+<!-- ============ PALMARÈS ============ -->
+<section id="champions">
+  <div class="shell">
+    <div class="sec-head rise">
+      <h2><span class="tube tube-amber">Les champions</span></h2>
+      <p>Le palmarès du flipper de compétition, année par année, intégré à l'application — des championnats du monde IFPA aux records les plus improbables.</p>
+    </div>
+    <div class="roll rise">
+      <table>
+        <thead>
+          <tr><th>Année</th><th>Champion</th><th>Titre</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2026</td><td>Jason Zahler</td><td>IFPA World Championship</td></tr>
+          <tr><td>2025</td><td>Jason Zahler</td><td>IFPA World Championship</td></tr>
+          <tr><td>2024</td><td>Escher Lefkoff</td><td>European Pinball Championship</td></tr>
+          <tr><td>2024</td><td>Jason Zahler</td><td>IFPA World Championship</td></tr>
+          <tr><td>…</td><td>…</td><td>…</td></tr>
+          <tr><td>2004</td><td>Lyman Sheats</td><td>PAPA World Championship</td></tr>
+        </tbody>
+      </table>
+      <p class="more">37 titres de 2004 à 2026, avec le finaliste, le pays, la ville, le total de Majors en carrière et le fait marquant de chaque saison. Le palmarès est <strong>bilingue</strong> et se met à jour par simple import d'un fichier tableur, sans attendre une mise à jour de l'application.</p>
+    </div>
   </div>
 </section>
 
